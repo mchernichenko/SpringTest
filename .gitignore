@@ -1,0 +1,21 @@
+# Covers JetBrains IDEs: IntelliJ
+
+## Directory-based project format
+.idea/
+
+## Additional for IntelliJ
+target/
+
+## File-based project format
+*.ipr
+*.iml
+*.iws
+
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
