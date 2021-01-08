@@ -5,7 +5,7 @@ package com.nexign.corona;
   с нарушением принципов SOLID, в частности, он имеет от 7 до бесконечности Responsibility
   До бесконечности, потомучно, в будущем мы не знаем сколько может появиться реализаций ConsoleAnnouncer и PolismenImlp
  */
-@Deprecated
+//@Deprecated
 public class CoronaDesinfector {
 
     /* Здесь идёт привязка к конкретной имплементации и если её нужно изменить, придётся вскрывать код этого класса

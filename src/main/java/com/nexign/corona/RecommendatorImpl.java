@@ -1,7 +1,7 @@
 package com.nexign.corona;
 
 @Singleton
-//@Deprecated
+@Deprecated
 public class RecommendatorImpl implements Recommendator {
 
     @InjectProperty("wisky")   // инициализация филда из applicetion.property с именем wisky, еули не указать, то будет искаться пропекти с именем филда
