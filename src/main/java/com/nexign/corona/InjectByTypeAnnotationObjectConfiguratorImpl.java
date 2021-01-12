@@ -11,8 +11,8 @@ public class InjectByTypeAnnotationObjectConfiguratorImpl implements ObjectConfi
     @Override
     @SneakyThrows
     public void configure(Object t, ApplicationContext context) {
-        /* если филд класса аннотирован @InjectByType, то его нужно просеттить объектом, который подходит под тип этого филда
-         */
+
+        // если филд класса аннотирован @InjectByType, то его нужно просеттить объектом, который подходит под тип этого филда
         for (Field field : t.getClass().getDeclaredFields()) {
             if (field.isAnnotationPresent(InjectByType.class)) {
                 field.setAccessible(true); // делаем филд доступным для записи

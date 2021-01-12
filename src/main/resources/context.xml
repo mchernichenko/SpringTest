@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--  Подключение обработчика аннотации @InjectRandomInt
+        этому бину id не даём т.к. мы не собираемся его никуда инжектить, это конфигуратор, загружается при поднятии контекста -->
+    <bean class="com.nexign.quoters.InjectRandomIntAnnotationBeanPostProcessor"/>
+
+    <!-- Подключение обработчика стандартных аннотаций, например, @PostConstruct -->
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+
+    <!-- это name space, который, по сути, прячет кусок xml с описанием BeanPostProcessor обработчиков, т.к. всех их можно не упомнить -->
+    <!-- <context:annotation-config/> -->
+
+    <bean class="com.nexign.quoters.ProfilingHandlerBeanPostProcessor"/>
+
+    <bean class="com.nexign.quoters.TerminatorQuoter" id="terminatorQuoter">
+        <constructor-arg value=""/>
+        <property name="message" value="i`ll be back"/>
+    </bean>
+
+</beans>

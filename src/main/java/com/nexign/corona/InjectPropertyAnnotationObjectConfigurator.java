@@ -14,7 +14,7 @@ import static java.util.stream.Collectors.toMap;
 /**
  * Поддержка аннотации InjectProperty, для конфигурации (настройки) объектов значениями из .properties
  * Суть конфигурации заключается в том, чтобы для переданого объекта определить филды с аннотицией @InjectProperty и
- * если они найдены, то засеттить в него значение из "application.properties" или из самой аннотиции.
+ * если они найдены, то засеттить в него значение из "application.properties" или из самой аннотации.
  */
 public class InjectPropertyAnnotationObjectConfigurator implements ObjectConfigurator {
 
@@ -32,7 +32,7 @@ public class InjectPropertyAnnotationObjectConfigurator implements ObjectConfigu
     @SneakyThrows
     public void configure(Object t, ApplicationContext context) {
 
-        // аннотаций может быть очень много, и для поддержки новой нужно было бы вскрывать код JavaConfig, а это наружение принципа SOLID (O - open close principle), поэтому вынесли сюда.
+        // аннотаций может быть очень много, и для поддержки новой нужно было бы вскрывать код JavaConfig, а это нарушение принципа SOLID (O - open close principle), поэтому вынесли сюда.
         // т.е. система должна быть открыта для расширения, но закрыта для внесения изменения в существующий код
 
         Class<?> implClass = t.getClass();

@@ -9,7 +9,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * Эта логика определяется конфигуратором InjectPropertyAnnotationObjectConfigurator
  */
 
-@Retention(RUNTIME) // это важно, без этого не работает
+// важно указать, что анотация должны быть доступна в runtime, иначе она не попадёт в байткод и reclection её не увидит
+@Retention(RUNTIME)
 public @interface InjectProperty {
     String value() default "";  // для проперти можно задать значение, по умолчанию пусто
 }

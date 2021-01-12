@@ -14,7 +14,7 @@ public class DeprecatedHandlerProxyConfigurator implements ProxyConfigurator {
 
     /**
      *
-     * @param t - объект который нужно запроскировать
+     * @param t - объект, который нужно запроскировать
      * @param implClass - тип проксируемого объекта
      * @return - возвращаем прокси-объект, если его класс помечен как @Deprecated, иначе возвращается исходный объект
      */
