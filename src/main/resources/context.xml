@@ -12,10 +12,12 @@
     <!-- Подключение обработчика стандартных аннотаций, например, @PostConstruct -->
     <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
 
-    <!-- это name space, который, по сути, прячет кусок xml с описанием BeanPostProcessor обработчиков, т.к. всех их можно не упомнить -->
-    <!-- <context:annotation-config/> -->
+    <!-- это name space, который, по сути, прячет кусок xml с описанием BeanPostProcessor обработчиков,
+         org.springframework.context.annotation.AnnotationConfigApplicationContext.к. всех их можно не упомнить -->
+    <context:annotation-config/>
 
     <bean class="com.nexign.quoters.ProfilingHandlerBeanPostProcessor"/>
+    <bean class="com.nexign.quoters.PostProxyInvokerContextListener"/>
 
     <bean class="com.nexign.quoters.TerminatorQuoter" id="terminatorQuoter">
         <constructor-arg value=""/>
