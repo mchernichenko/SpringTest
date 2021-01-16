@@ -13,13 +13,14 @@ import java.util.Random;
  */
 public class InjectRandomIntAnnotationBeanPostProcessor implements BeanPostProcessor {
 
-    // вызывается до init метода и всегда работает с оригинальным объектом (не с прокси)
+    // вызывается до init метода и всегда работает с оригинальным объектом (не с прокси).
+    // В beanName всегда приходит то, что указали в контексте, например, id="terminatorQuoterId"
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         Field[] fields = bean.getClass().getDeclaredFields();
         for (Field field : fields) {
             InjectRandomInt annotation = field.getAnnotation(InjectRandomInt.class); // у каждого филда пытаемся получить аннотацию @InjectRandomInt
-            if (annotation != null) { // если анотация есть вытаскиваем из ней значения
+            if (annotation != null) { // если аннотация есть, то вытаскиваем из ней значения
                 int min = annotation.min();
                 int max = annotation.max();
                 Random random = new Random();

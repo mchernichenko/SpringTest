@@ -19,7 +19,7 @@
     <bean class="com.nexign.quoters.ProfilingHandlerBeanPostProcessor"/>
     <bean class="com.nexign.quoters.PostProxyInvokerContextListener"/>
 
-    <bean class="com.nexign.quoters.TerminatorQuoter" id="terminatorQuoter">
+    <bean class="com.nexign.quoters.TerminatorQuoter" id="terminatorQuoterId">
         <constructor-arg value=""/>
         <property name="message" value="i`ll be back"/>
     </bean>

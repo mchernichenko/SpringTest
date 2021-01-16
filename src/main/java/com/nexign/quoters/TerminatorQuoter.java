@@ -28,8 +28,9 @@ public class TerminatorQuoter implements Quoter {
         System.out.println(repeat);
     }
 
+    // все методы, аннотированные @PostProxy запускаются сами в тот момент, когда уже всё настроено и все Proxy уже сгенерировались и это может делать ContextListener
     @Override
-  //  @PostProxy  // все методы, аннотированные @PostProxy запускались сами в тот момент, когда уже всё настроено и все Proxy уже сгенерировались и это может делать ContextListener
+  //  @PostProxy
     public void sayQuote() {
         System.out.println("Phase_3");
         for (int i = 0; i < repeat; i++) {

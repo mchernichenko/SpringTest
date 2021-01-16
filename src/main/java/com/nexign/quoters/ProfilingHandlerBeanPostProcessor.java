@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class ProfilingHandlerBeanPostProcessor implements BeanPostProcessor {
 
-    // запоминаем оригинальные имена классов, для которых что-то хотим сделать (в нашем случае поеченных @Profiling),
+    // запоминаем оригинальные имена классов, для которых что-то хотим сделать (в нашем случае помеченных @Profiling),
     // т.к. на этапе postProcessAfterInitialization уже может прийти не оригинальный объект, а прокся. Но имя бина не меняется.
     private Map<String, Class> map = new HashMap<>();
 

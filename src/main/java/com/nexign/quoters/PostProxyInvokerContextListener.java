@@ -29,7 +29,7 @@ public class PostProxyInvokerContextListener implements ApplicationListener<Cont
             // с именем бина работать нельзя, т.к. класс его реализующий может быть прокси
             // т.к.нам нужна исходная имплементация, т.к. в ней нужно искать аннотации, то за ней нужно ходить в фабрику спринга, которая изначально в мапу
             // сохранила контекст при его поднятии
-            BeanDefinition beanDefinition = factory.getBeanDefinition(name);
+        BeanDefinition beanDefinition = factory.getBeanDefinition(name);
             String originalClassName = beanDefinition.getBeanClassName(); // достаём оригинальное название класса, которое в xml прописали
             try {
                 Class<?> originalClass = Class.forName(originalClassName);
