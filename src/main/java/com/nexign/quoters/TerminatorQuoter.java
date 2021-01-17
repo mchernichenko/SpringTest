@@ -5,6 +5,7 @@ import lombok.Setter;
 import javax.annotation.PostConstruct;
 
 @Profiling // профилирование - в данном случае хотим писать в лог сколько метод работает
+@DeprecatedClass(newImpl = T1000.class) // аннотация подменяет клас на новый при загрузке контекста
 public class TerminatorQuoter implements Quoter {
 
     /* для того чтобы настраивать всё через xml обязательно делать сеттеры, т.к. с точки зрения xml-го спринга это просто не проперти
@@ -16,7 +17,7 @@ public class TerminatorQuoter implements Quoter {
     @InjectRandomInt(min=2, max=10) // кастомная аннотация
     private int repeat;
 
-    public TerminatorQuoter(String message) {
+    public TerminatorQuoter() {
         System.out.println("Phase_1");
     }
 

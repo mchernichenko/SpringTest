@@ -16,11 +16,16 @@
          org.springframework.context.annotation.AnnotationConfigApplicationContext.к. всех их можно не упомнить -->
     <context:annotation-config/>
 
+    <!-- подключение обработчика аннотации @DeprecatedClass -->
+    <bean class="com.nexign.quoters.DeprecationHandlerBeanFactoryBeanProcessor"/>
+
+    <!-- подключение обработчика аннотации @Profiling -->
     <bean class="com.nexign.quoters.ProfilingHandlerBeanPostProcessor"/>
+
+    <!-- подключение обработчика аннотации @PostProxy -->
     <bean class="com.nexign.quoters.PostProxyInvokerContextListener"/>
 
     <bean class="com.nexign.quoters.TerminatorQuoter" id="terminatorQuoterId">
-        <constructor-arg value=""/>
         <property name="message" value="i`ll be back"/>
     </bean>
 

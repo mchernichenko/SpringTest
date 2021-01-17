@@ -1,6 +1,10 @@
 package com.nexign.quoters;
 
+import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+import org.springframework.context.support.GenericGroovyApplicationContext;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
@@ -19,6 +23,7 @@ public class Main {
            и создаются схожие (с corona) листы конфигураторов, через которые фабрика будет прогонять создаваемые бины.
          */
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+        PropertiesBeanDefinitionReader
 
         // все объекты запрашиваются уже у контекста по интерфейсу или по классу, причём все бины после создания настраиваются, т.е
         // прогоняются через BeanPostProcessor и только после попадают в контейнер и отдаются контекстом. Задействован паттерн Chain of Responsibility
